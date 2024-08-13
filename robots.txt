@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://namso.net/sitemap.xml
+Sitemap: https://namso.top/sitemap.xml

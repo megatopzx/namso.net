@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home page -->
+  <url>
+    <loc>https://namso.top/index.html</loc>
+    <lastmod>2024-08-13</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- BIN Checker page -->
+  <url>
+    <loc>https://namso.top/bin_checker.html</loc>
+    <lastmod>2024-08-13</lastmod>
+    <priority>1.0</priority>
+  </url>
+</urlset>
