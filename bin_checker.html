@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./iconapp.png" />
+
+    <meta
+      name="description"
+      content="BIN Checker is a powerful tool to verify and validate Bank Identification Numbers (BIN). Check BINs accurately and efficiently with our advanced BIN checker."
+    />
+    <meta
+      name="keywords"
+      content="BIN checker, check BIN, Bank Identification Number, BIN validation, BIN check, card BIN lookup, validate BIN, BIN info, BIN database, BIN number, verify BIN, card issuer, bank identification, secure BIN check, online BIN checker"
+    />
+    <meta name="author" content="megatopx" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="BIN Checker - Validate Bank Identification Numbers"
+    />
+    <meta
+      property="og:description"
+      content="BIN Checker is a powerful tool to verify and validate Bank Identification Numbers (BIN). Check BINs accurately and efficiently with our advanced BIN checker."
+    />
+    <meta property="og:image" content="./iconapp.png" />
+    <meta property="og:url" content="https://namso.top" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="BIN Checker - Validate Bank Identification Numbers"
+    />
+    <meta
+      name="twitter:description"
+      content="BIN Checker is a powerful tool to verify and validate Bank Identification Numbers (BIN). Check BINs accurately and efficiently with our advanced BIN checker."
+    />
+    <meta name="twitter:image" content="./iconapp.png" />
+
+    <link
+      rel="icon"
+      href="assets/images/icons/namso-icon-c98756c75f1e5270d70b03a4372f5e93.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="assets/styles/app-30b2fe202898e282eb0a0930c4e85c02.css"
+    />
+  </head>
+
+  <body>
+    <div class="flex-col h-screen flex">
+      <div>
+        <header class="w-full" data-controller="header">
+          <nav class="bg-white shadow-lg">
+            <div
+              class="md:flex items-center justify-between py-2 px-8 md:px-12"
+            >
+              <div class="flex justify-between items-center">
+                <div
+                  class="text-2xl font-bold text-gray-800 md:text-3xl flex items-center"
+                >
+                  <img
+                    src="assets/images/icons/namso-icon-c98756c75f1e5270d70b03a4372f5e93.png"
+                    width="50"
+                    height="50"
+                    alt="namso gen logo"
+                  />
+                  <a href="bin_checker.html">Bin Checker</a>
+                </div>
+                <div class="md:hidden" id="mobileMenuButton">
+                  <button
+                    type="button"
+                    title="open-menu"
+                    class="block text-gray-800 hover:text-gray-700 focus:text-gray-700 focus:outline-none"
+                  >
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                      <path
+                        class="hidden"
+                        d="M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"
+                      ></path>
+                      <path
+                        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="flex flex-col md:flex-row hidden md:block -mx-2"
+                id="mobileMenu"
+              >
+                <a
+                  href="index.html"
+                  class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+                  >NamsoGen</a
+                >
+                <a
+                  href="bin_checker.html"
+                  class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+                  >Bin checker</a
+                >
+                <a
+                  href="privacy_policy.html"
+                  class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+                  >Privacy policy</a
+                >
+              </div>
+            </div>
+          </nav>
+        </header>
+        <script src="./menuMobile.js"></script>
+      </div>
+      <div class="max-w-2xl mx-auto md:mt-10 flex-grow">
+        <div class="p-4">
+          <div class="flex gap-2 flex-col mb-5">
+            <h1 class="text-center mt-5 text-2xl font-bold">
+              CHECK BIN - Bank Identification Number
+            </h1>
+            <div>
+              Explore our advanced BIN checker tool, designed to instantly
+              provide accurate information about BIN numbers. Perfect for
+              developers, testers, and security professionals who need to
+              validate and analyze card information securely and efficiently.
+            </div>
+          </div>
+
+          <form
+            name="main_generator"
+            class="flex gap-4"
+            data-controller="main-generator"
+            id="binForm"
+            autocomplete="off"
+          >
+            <div
+              class="flex gap-4 flex-col sm:flex-row justify-center w-full items-center"
+            >
+              <div class="flex flex-col gap-4 sm:w-1/2 w-full">
+                <div class="relative w-full h-full">
+                  <input
+                    type="text"
+                    id="main_generator_bin"
+                    name="main_generator[bin]"
+                    class="form-floating-widget peer"
+                    placeholder=""
+                    maxlength="6"
+                    pattern="\d*"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').substring(0, 6);"
+                    value=""
+                  />
+                  <label class="form-floating-label" for="main_generator_bin"
+                    >BIN</label
+                  >
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    id="main_generator_generate"
+                    name="main_generator[generate]"
+                    class="form-generate-btn"
+                  >
+                    CHECK
+                  </button>
+                  <br />
+                  <br />
+                  <center>
+                    <div
+                      class="g-recaptcha"
+                      data-sitekey="6LcVJKsaAAAAAL8VESnYXmfjM3vsGGv2vEh2YdVk"
+                    ></div>
+                  </center>
+                </div>
+              </div>
+
+              <div class="sm:w-1/2 w-full">
+                <div class="relative w-full h-full">
+                  <div id="progressBar" class="progress-bar"></div>
+                  <div id="results" class="result-container">
+                    The results will be displayed here.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <script
+            src="https://www.google.com/recaptcha/api.js"
+            async
+            defer
+          ></script>
+          <script>
+            document
+              .getElementById("binForm")
+              .addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                let bin = document
+                  .getElementById("main_generator_bin")
+                  .value.trim();
+                const recaptchaResponse = grecaptcha.getResponse();
+
+                if (bin.length < 6) {
+                  alert("THE BIN MUST HAVE EXACTLY 6 DIGITS.");
+                  return;
+                }
+
+                bin = bin.substring(0, 6);
+
+                if (!recaptchaResponse) {
+                  alert("PLEASE SOLVE THE RECAPTCHA.");
+                  return;
+                }
+
+                // Show progress bar
+                document.getElementById("progressBar").style.width = "100%";
+                document.getElementById("progressBar").style.visibility =
+                  "visible";
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "bin.php", true);
+                xhr.setRequestHeader(
+                  "Content-Type",
+                  "application/x-www-form-urlencoded"
+                );
+
+                xhr.onload = function () {
+                  document.getElementById("progressBar").style.visibility =
+                    "hidden";
+
+                  if (xhr.status === 200) {
+                    try {
+                      const response = JSON.parse(xhr.responseText);
+
+                      if (
+                        response.cardInfo &&
+                        response.cardCategory &&
+                        response.cardBrand
+                      ) {
+                        document.getElementById("results").innerHTML =
+                          formatResult(response, bin);
+                      } else {
+                        alert("ERROR PROCESSING SERVER RESPONSE.");
+                      }
+                    } catch (e) {
+                      alert("INVALID SERVER RESPONSE.");
+                    }
+                  } else {
+                    alert("ERROR QUERYING BIN.");
+                  }
+
+                  // Reset reCAPTCHA
+                  grecaptcha.reset();
+                };
+
+                xhr.send(
+                  `bin=${bin}&g-recaptcha-response=${recaptchaResponse}`
+                );
+              });
+
+            function formatResult(data, bin) {
+              const { cardInfo, cardCategory, cardBrand, bankName } = data;
+              return `
+              <div class="copy-container">
+                <button type="button" class="copy-btn" onclick="copyResults()">COPY</button>
+              </div>
+              <table class="styled-table">
+                <tr><th>BIN</th><td>${bin}</td></tr>
+                <tr><th>COUNTRY</th><td>${cardInfo.country.toUpperCase()}</td></tr>
+                <tr><th>CARD TYPE</th><td>${cardInfo.cardType.toUpperCase()}</td></tr>
+                <tr><th>CATEGORY</th><td>${cardCategory.toUpperCase()}</td></tr>
+                <tr><th>BRAND</th><td>${cardBrand.toUpperCase()}</td></tr>
+                <tr><th>BANK</th><td>${(
+                  bankName || "NOT PROVIDED"
+                ).toUpperCase()}</td></tr>
+              </table>`;
+            }
+
+            function copyResults() {
+              const results = document.getElementById("results").innerText;
+              navigator.clipboard.writeText(results).then(() => {
+                alert("RESULTS COPIED TO CLIPBOARD.");
+              });
+            }
+          </script>
+
+          <style>
+            .progress-bar {
+              width: 0%;
+              height: 5px;
+              background-color: #4caf50;
+              visibility: hidden;
+              transition: width 0.4s ease;
+            }
+
+            .result-container {
+              padding: 20px;
+              border: 1px solid #ddd;
+              background-color: #f9f9f9;
+              border-radius: 8px;
+              box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .styled-table {
+              width: 100%;
+              border-collapse: collapse;
+              margin: 25px 0;
+              font-size: 1em;
+              font-family: Arial, sans-serif;
+              text-align: left;
+            }
+
+            .styled-table th,
+            .styled-table td {
+              padding: 12px 15px;
+              border: 1px solid #ddd;
+            }
+
+            .styled-table th {
+              background-color: #f2f2f2;
+            }
+
+            .styled-table tr:nth-of-type(even) {
+              background-color: #f9f9f9;
+            }
+
+            .styled-table tr:hover {
+              background-color: #f1f1f1;
+            }
+
+            .copy-container {
+              display: flex;
+              justify-content: flex-end;
+              margin-bottom: 10px;
+            }
+
+            .copy-btn {
+              background-color: #4caf50;
+              color: white;
+              padding: 5px 10px;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+
+            .copy-btn:hover {
+              background-color: #45a049;
+            }
+          </style>
+        </div>
+      </div>
+      <div>
+        <footer class="bg-white dark:bg-gray-900 w-full">
+          <div class="px-4 py-6 bg-gray-100 flex items-center justify-center">
+            <span class="text-sm text-black text-center">
+              © 2024 <a href="index.html">Namso Gen</a> All Rights Reserved.
+            </span>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

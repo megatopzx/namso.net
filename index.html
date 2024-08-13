@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./iconapp.png" />
+
+    <meta
+      name="description"
+      content="NamsoGen is a powerful random test credit card number generator that allows you to create numbers based on your specific BIN pattern. With Namso Gen, generate credit card numbers easily for testing and development purposes."
+    />
+    <meta
+      name="keywords"
+      content="NamsoGen, Namso Gen, credit card generator, random card numbers, fake credit card details, credit card validator, test credit card numbers, temporary credit card, cc validator, BIN generator, credit card generator, test credit card data, ccgen, mastercard, visa, amex, discover"
+    />
+    <meta name="author" content="megatopx" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Namso Gen - Test Credit Cards Generator"
+    />
+    <meta
+      property="og:description"
+      content="NamsoGen is your go-to solution for generating random test credit card numbers based on your own BIN pattern. Generate test credit card data with Namso Gen efficiently and reliably."
+    />
+    <meta property="og:image" content="./iconapp.png" />
+    <meta property="og:url" content="https://namso.top" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Namso Gen - Test Credit Cards Generator"
+    />
+    <meta
+      name="twitter:description"
+      content="NamsoGen is a premier random test credit card number generator based on your custom BIN pattern. Easily generate test credit card numbers with Namso Gen."
+    />
+    <meta name="twitter:image" content="./iconapp.png" />
+
+    <link
+      rel="icon"
+      href="assets/images/icons/namso-icon-c98756c75f1e5270d70b03a4372f5e93.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="assets/styles/app-30b2fe202898e282eb0a0930c4e85c02.css"
+    />
+  </head>
+
+  <body>
+    <div class="flex-col h-screen flex">
+      <div>
+        <header class="w-full" data-controller="header">
+          <nav class="bg-white shadow-lg">
+            <div
+              class="md:flex items-center justify-between py-2 px-8 md:px-12"
+            >
+              <div class="flex justify-between items-center">
+                <div
+                  class="text-2xl font-bold text-gray-800 md:text-3xl flex items-center"
+                >
+                  <img
+                    src="assets/images/icons/namso-icon-c98756c75f1e5270d70b03a4372f5e93.png"
+                    width="50"
+                    height="50"
+                    alt="namso gen logo"
+                  />
+                  <a href="index.html">Namso Gen</a>
+                </div>
+                <div class="md:hidden" id="mobileMenuButton">
+                  <button
+                    type="button"
+                    title="open-menu"
+                    class="block text-gray-800 hover:text-gray-700 focus:text-gray-700 focus:outline-none"
+                  >
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                      <path
+                        class="hidden"
+                        d="M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"
+                      ></path>
+                      <path
+                        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="flex flex-col md:flex-row hidden md:block -mx-2"
+                id="mobileMenu"
+              >
+                <a
+                  href="index.html"
+                  class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+                  >NamsoGen</a
+                >
+                <a
+                  href="bin_checker.html"
+                  class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+                  >Bin checker</a
+                >
+                <a
+                  href="privacy_policy.html"
+                  class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+                  >Privacy policy</a
+                >
+              </div>
+            </div>
+          </nav>
+        </header>
+        <script src="./menuMobile.js"></script>
+      </div>
+      <div class="max-w-2xl mx-auto md:mt-10 flex-grow">
+        <div class="p-4">
+          <div class="flex gap-2 flex-col mb-5">
+            <h1 class="text-center mt-5 text-2xl font-bold">
+              CREDIT CARD GENERATOR
+            </h1>
+            <div>
+              Explore our advanced Namso Gen credit card generator, crafted to
+              instantly provide valid card numbers. Perfect for secure and
+              reliable testing, it’s an essential tool for developers, testers,
+              and security professionals.
+            </div>
+          </div>
+
+          <form
+            name="main_generator"
+            method="post"
+            class="flex gap-4"
+            data-controller="main-generator"
+            id="main-generator"
+            autocomplete="off"
+          >
+            <div
+              class="flex gap-4 flex-col sm:flex-row justify-center w-full items-center"
+            >
+              <div class="flex flex-col gap-4 sm:w-1/2 w-full">
+                <div class="relative w-full h-full">
+                  <input
+                    type="text"
+                    id="main_generator_bin"
+                    name="main_generator[bin]"
+                    class="form-floating-widget peer"
+                    placeholder=""
+                    value=""
+                  />
+
+                  <label class="form-floating-label" for="main_generator_bin"
+                    >Bin</label
+                  >
+                </div>
+                <div class="flex gap-2 justify-around">
+                  <div class="relative w-full h-full">
+                    <select
+                      id="main_generator_month"
+                      name="main_generator[month]"
+                      class="form-floating-widget peer"
+                      placeholder=""
+                      value=""
+                    >
+                      <option value="Random">Random</option>
+                      <option value="01">01</option>
+                      <option value="02">02</option>
+                      <option value="03">03</option>
+                      <option value="04">04</option>
+                      <option value="05">05</option>
+                      <option value="06">06</option>
+                      <option value="07">07</option>
+                      <option value="08">08</option>
+                      <option value="09">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+
+                    <label
+                      class="form-floating-label required"
+                      for="main_generator_month"
+                      >Month</label
+                    >
+                  </div>
+                  <div class="relative w-full h-full">
+                    <select
+                      id="main_generator_year"
+                      name="main_generator[year]"
+                      class="form-floating-widget peer"
+                      placeholder=""
+                      value=""
+                    >
+                      <option value="Random">Random</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                      <option value="2026">2026</option>
+                      <option value="2027">2027</option>
+                      <option value="2028">2028</option>
+                      <option value="2029">2029</option>
+                      <option value="2030">2030</option>
+                      <option value="2031">2031</option>
+                      <option value="2032">2032</option>
+                      <option value="2033">2033</option>
+                      <option value="2034">2034</option>
+                      <option value="2035">2035</option>
+                    </select>
+                    <label
+                      class="form-floating-label required"
+                      for="main_generator_year"
+                      >Year</label
+                    >
+                  </div>
+                </div>
+                <div class="flex gap-2 justify-around">
+                  <div class="relative w-full h-full">
+                    <input
+                      type="text"
+                      id="main_generator_cvv"
+                      name="main_generator[cvv]"
+                      inputmode="decimal"
+                      class="form-floating-widget peer"
+                      placeholder=""
+                      value=""
+                    />
+
+                    <label
+                      class="form-floating-label required"
+                      for="main_generator_cvv"
+                      >CVV</label
+                    >
+                  </div>
+                  <div class="relative w-full h-full">
+                    <input
+                      type="text"
+                      id="main_generator_quantity"
+                      name="main_generator[quantity]"
+                      required="required"
+                      inputmode="decimal"
+                      class="form-floating-widget peer"
+                      placeholder=""
+                      value="10"
+                    />
+
+                    <label
+                      class="form-floating-label required"
+                      for="main_generator_quantity"
+                      >Quantity</label
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    id="main_generator_generate"
+                    name="main_generator[generate]"
+                    class="form-generate-btn"
+                  >
+                    Generate
+                  </button>
+                </div>
+              </div>
+
+              <div class="sm:w-1/2 w-full">
+                <div class="relative w-full h-full">
+                  <textarea
+                    id="main_generator_result"
+                    name="main_generator[result]"
+                    class="form-floating-widget h-60 resize-none"
+                    placeholder=""
+                    value=""
+                  ></textarea>
+
+                  <label
+                    class="form-floating-label required"
+                    for="main_generator_result"
+                    >Result</label
+                  >
+                </div>
+              </div>
+            </div>
+            <script>
+              function generateCard(bin, length) {
+                var bin2 = "";
+                var card1_l = [];
+                var card2_l = [];
+                var sum = 0;
+                var check_sum = 0;
+
+                // Replace 'x' with random digits and limit to length-1
+                for (
+                  var i = 0;
+                  i < bin.length && bin2.length < length - 1;
+                  i++
+                ) {
+                  var char = bin[i].toLowerCase();
+                  if (char === "x") {
+                    char = Math.floor(Math.random() * 10);
+                  }
+                  bin2 += char;
+                }
+
+                // If bin2 is shorter than length-1, append random digits
+                while (bin2.length < length - 1) {
+                  bin2 += Math.floor(Math.random() * 10);
+                }
+
+                // Convert bin2 to array of integers
+                for (var i = 0; i < bin2.length; i++) {
+                  card1_l.push(parseInt(bin2[i]));
+                  card2_l.push(parseInt(bin2[i]));
+                }
+
+                // Double the value of alternate digits starting from the rightmost
+                for (var i = card2_l.length - 1; i >= 0; i -= 2) {
+                  card2_l[i] *= 2;
+                  if (card2_l[i] > 9) {
+                    card2_l[i] -= 9;
+                  }
+                }
+
+                // Sum all the digits
+                for (var i in card2_l) {
+                  sum += card2_l[i];
+                }
+
+                // Calculate the checksum
+                var mod = sum % 10;
+                if (mod !== 0) {
+                  check_sum = 10 - mod;
+                }
+
+                // Add the checksum to the card number
+                card1_l.push(check_sum);
+
+                // Convert the card number array to a string
+                return card1_l.join("");
+              }
+
+              function generateMonth() {
+                var monthList = [
+                  "01",
+                  "02",
+                  "03",
+                  "04",
+                  "05",
+                  "06",
+                  "07",
+                  "08",
+                  "09",
+                  "10",
+                  "11",
+                  "12",
+                ];
+                return monthList[Math.floor(Math.random() * 12)];
+              }
+
+              function generateYear() {
+                var yearList = [
+                  "2024",
+                  "2025",
+                  "2026",
+                  "2027",
+                  "2028",
+                  "2029",
+                  "2030",
+                  "2031",
+                  "2032",
+                  "2033",
+                  "2034",
+                  "2035",
+                  "2036",
+                  "2037",
+                  "2038",
+                  "2039",
+                  "2040",
+                ];
+                return yearList[Math.floor(Math.random() * yearList.length)];
+              }
+
+              function generateCCV(bin) {
+                var ccvLength = /^3[47]/.test(bin) ? 4 : 3; // Amex has 4-digit CVV
+                var ccv = "";
+                for (var i = 0; i < ccvLength; i++) {
+                  ccv += Math.floor(Math.random() * 10);
+                }
+                return ccv;
+              }
+
+              function generate() {
+                var bin = document
+                  .getElementById("main_generator_bin")
+                  .value.trim();
+                var ccv = document
+                  .getElementById("main_generator_cvv")
+                  .value.trim();
+                var month = document.getElementById(
+                  "main_generator_month"
+                ).value;
+                var year = document.getElementById("main_generator_year").value;
+                var count = parseInt(
+                  document
+                    .getElementById("main_generator_quantity")
+                    .value.trim()
+                );
+                var output = document.getElementById("main_generator_result");
+
+                if (bin === "") {
+                  alert("BIN cannot be empty!");
+                  return;
+                }
+                if (isNaN(count) || count <= 0) {
+                  count = 10;
+                }
+
+                var cardLength = 16;
+                // Define length based on card type
+                if (/^3[47]/.test(bin)) {
+                  // Amex
+                  cardLength = 15;
+                } else if (/^3[0689]/.test(bin)) {
+                  // Diners Club
+                  cardLength = 14;
+                }
+
+                var cards = "";
+                for (var i = 0; i < count; i++) {
+                  var generatedCard = generateCard(bin, cardLength);
+                  var generatedMonth =
+                    month === "Random" ? generateMonth() : month;
+                  var generatedYear = year === "Random" ? generateYear() : year;
+                  var generatedCCV =
+                    ccv === "" || ccv === "Random" ? generateCCV(bin) : ccv;
+                  cards += `${generatedCard}|${generatedMonth}|${generatedYear}|${generatedCCV}\n`;
+                }
+                output.value = cards.trim();
+              }
+
+              document
+                .getElementById("main-generator")
+                .addEventListener("submit", function (e) {
+                  e.preventDefault();
+                  generate();
+                });
+            </script>
+            <input
+              type="hidden"
+              id="main_generator__token"
+              name="main_generator[_token]"
+              value="0536970f.p7mMtNSnKZM18u6QQefwgs_1cvuIQiwSBSkJGSLF5W8.z4Dr8JL-duZ4gcPmMJe4-4SbOqS8EHxwPWFqSXKcihriztOAofV640aQ2g"
+            />
+          </form>
+        </div>
+      </div>
+      <div>
+        <footer class="bg-white dark:bg-gray-900 w-full">
+          <div class="px-4 py-6 bg-gray-100 flex items-center justify-center">
+            <span class="text-sm text-black text-center">
+              © 2024 <a href="index.html">Namso Gen</a> All Rights Reserved.
+            </span>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
